@@ -13,7 +13,8 @@ public class FornecedorInfoService {
 	private FornecedorInfoRepository repository;
 
 	public FornecedorInfo getInfoPorEstado(String estado) {
-		return this.repository.findByEstado(estado);
+		FornecedorInfo result = this.repository.findByEstado(estado);
+		return result;
 	}
 	
 }

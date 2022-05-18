@@ -1,6 +1,7 @@
 package microfornecedor.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +16,9 @@ public class FornecedorInfoController {
 	private FornecedorInfoService fornecedorInfoService;
 	
 	@RequestMapping("/{estado}")
-	public FornecedorInfo getInfoPorEstado(String estado) {
-		return this.fornecedorInfoService.getInfoPorEstado(estado);
+	public FornecedorInfo getInfoPorEstado(@PathVariable String estado) {
+		FornecedorInfo result = this.fornecedorInfoService.getInfoPorEstado(estado);
+		return result;
 	}
 	
 }
